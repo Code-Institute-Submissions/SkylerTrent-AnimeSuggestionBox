@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block nav %}
+{% endblock%}
+{% block content %}
+ <!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<div class="container">
+    <!-- Portfolio Section Heading-->
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" id="editor">Anime List Editor </h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+    <div class="divider-custom-line"></div>
+</div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-lg-2">
+            <a id= "arrow" href="index.html"><i class="material-icons medium arrow_back">arrow_back</i></a>
+        </div>
+        <div class="col-sm-12 col-lg-12" id="pge_link_container">
+            <ul>
+                <a class="waves-effect waves-light btn-large edit_btns active"><i class="material-icons left">add</i>Add</a>
+                <a class="waves-effect waves-light btn-large edit_btns"><i class="material-icons left">edit</i>Edit</a>
+                <a class="waves-effect waves-light btn-large edit_btns"><i class="material-icons left">update</i>Update</a>
+                <a class="waves-effect waves-light btn-large edit_btns"><i class="material-icons left">delete</i>Delete</a>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <form class="col s12 container">
+      <div class="row">
+        <div class="input-field col s6 l6">
+          <input placeholder="Placeholder" id="anime_name" type="text" class="validate">
+          <label for="anime_name">Anime Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="description" type="text" class="validate">
+          <label for="description">Description</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="release_date" type="text" class="validate">
+          <label for="release_date">Release Date</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="image" type="text" class="validate">
+          <label for="image">Image URL</label>
+        </div>
+        <div class="col-sm-12 col-lg-12">
+            <button class="btn-large waves-effect waves-light " type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+        
+{% endblock %}
+
