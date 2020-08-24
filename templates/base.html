@@ -69,62 +69,29 @@
                 </div>
                 <!-- Portfolio Grid Items-->
                 <div class="row">
+      {% for show in anime %}
                     <!-- Portfolio Item 1-->
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="https://www.geekgirlauthority.com/wp-content/uploads/2019/10/Screen-Shot-2019-10-08-at-5.48.57-PM.png" alt="" />
+                            <img class="img-fluid" src="{{ show.image }}" alt="" />
                         </div>
                     </div>
-                   
-                    <!-- Portfolio Item 2-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="https://cdn-cf.gamivo.com/image_cover.jpg?f=123533&n=16114450228574428.jpg&h=c2920592a4308750500eeb5f210786ee" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="https://cdn.archonia.us/images/1-35263-1-1-original1/gurren-lagann-wall-scroll-group-long.jpg" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="https://cnet2.cbsistatic.com/img/BM2tWd2cGfPpDtMoOzCgGcK-c_0=/756x567/2020/01/29/0e98a39c-221f-4162-91c9-c8652a3f23d4/one-piece.jpg" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="https://gamervw.com/wp-content/uploads/2018/11/81Ong-2m2L._RI_.jpg" alt="" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="https://geeklyinc.com/wp-content/uploads/2014/01/full-metal-alchemist.jpg" alt="" />
-                        </div>
-                    </div>
+ {% endfor %}
                 </div>
+                    <!-- Portfolio Item 2-->
+                    
+                    <!-- Portfolio Item 3-->
+                    
+                    <!-- Portfolio Item 4-->
+                    
+                    <!-- Portfolio Item 5-->
+                    
+                    <!-- Portfolio Item 6-->
+                
+                
             </div>
         </section>
         <!-- About Section-->
