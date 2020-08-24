@@ -5,17 +5,20 @@
 {% block content %}
  <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<div class="container">
-    <!-- Portfolio Section Heading-->
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0" id="editor">Anime List Editor </h2>
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-    <div class="divider-custom-line"></div>
-    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-    <div class="divider-custom-line"></div>
-</div>
-</div>
-
+<section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h1 class="page-section-heading text-center text-uppercase  mb-0 editor_txt_color">Anime Editor </h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <h3 class="text-center text-uppercase mb-0 editor_txt_color">Add Anime</h3>
+            </div>
+</section>
+<!--FORM CRUD BUTTONS -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-lg-2">
@@ -31,38 +34,48 @@
         </div>
     </div>
 </div>
-
+       <!-- ANIME NAME -->
 <div class="row">
-    <form class="col s12 container">
+    <form class="col s12 container" method="POST" action="{{ url_for('add_anime')}}">
       <div class="row">
         <div class="input-field col s6 l6">
-          <input placeholder="Placeholder" id="anime_name" type="text" class="validate">
+          <input name="anime_name" id="anime_name" type="text" class="validate" required>
           <label for="anime_name">Anime Name</label>
         </div>
       </div>
+      <!-- ANIME DESCRIPTION -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="description" type="text" class="validate">
-          <label for="description">Description</label>
+          <input id="anime_description" name="anime_description" type="text" class="validate" required>
+          <label for="anime_description">Description</label>
         </div>
       </div>
+      <!-- RELEASE DATE -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="release_date" type="text" class="validate">
-          <label for="release_date">Release Date</label>
+          <input id="anime_release_date" name="anime_release_date" type="text" class="validate" required>
+          <label for="anime_release_date">Release Date</label>
         </div>
       </div>
+      <!-- IMAGE URL -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="image" type="text" class="validate">
-          <label for="image">Image URL</label>
+          <input id="anime_image" name="anime_image" type="text" class="validate" required>
+          <label for="anime_image">Image URL</label>
+        </div>
+      </div>
+      <!-- URL TO WATCH ANIME -->
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="anime_url" name="anime_url" type="text" class="validate" required>
+          <label for="anime_url">URL To Watch Anime</label>
         </div>
         <div class="col-sm-12 col-lg-12">
-            <button class="btn-large waves-effect waves-light " type="submit" name="action">Submit<i class="material-icons right">send</i></button>
+            <button class="btn-large waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
         </div>
       </div>
+      
     </form>
   </div>
-        
 {% endblock %}
 

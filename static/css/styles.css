@@ -80,6 +80,12 @@
   box-sizing: border-box;
 }
 
+.editor_txt_color {
+    color: #2C3E50 !important;
+    font-size: 36px !important;
+    font-weight: 700;
+}
+
 #about {
    background: url(https://wallpapercave.com/wp/wp2527106.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;

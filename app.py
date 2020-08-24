@@ -15,13 +15,31 @@ mongo = PyMongo(app)
 @app.route('/get_anime')
 def get_anime():
     return render_template("index.html", anime=mongo.db.myFirstMDB.find())
+
 @app.route('/editor.html')
-def editor_add():
+def anime_editor():
     return render_template("editor.html")
+
+
+
+@app.route('/add_anime', methods=["GET", "POST"])
+def add_anime():
+    if request.method == "POST":
+        anime = {
+            "anime_name": request.form.get("anime_name"),
+            "anime_description": request.form.get("anime_description"),
+            "anime_release_date": request.form.get("anime_release_date"),
+            "anime_image": request.form.get("anime_image"),
+            "anime_url": request.form.get("anime_url")
+        }
+        mongo.db.myFirstMDB.insert_one(anime)
+        return redirect(url_for("get_anime"))
 
 @app.route('/index.html')
 def go_home():
     return render_template("index.html", anime=mongo.db.myFirstMDB.find())
+
+
 
 
 if __name__ == '__main__':

@@ -67,11 +67,11 @@
             {% for show in anime %}
             <div class="col-sm-4 my-4">
                 <div class="card">
-                    <img class="card-img-top" src="{{ show.image }}" alt="">
+                    <img class="card-img-top" src="{{ show.anime_image }}" alt="">
                     <div class="card-body">
-                        <h2 class="card-title">{{show.name}}</h2>
-                        <p class="card-text">{{show.description}}</p>
-                        <a href="{{ show.url }}"><button type="button" class="btn btn-lg btn-primary">Watch</button></a>
+                        <h2 class="card-title">{{show.anime_name}}</h2>
+                        <p class="card-text">{{show.anime_description}}</p>
+                        <a href="{{ show.anime_url }}"><button type="button" class="btn btn-lg btn-primary">Watch</button></a>
                     </div>        
                 </div>
             </div>
