@@ -26,7 +26,8 @@ def go_home():
 
 @app.route('/edit_anime.html')
 def edit_anime():
-    return render_template("edit_anime.html", anime=mongo.db.myFirstMDB.find())
+    categories = mongo.db.myFirstMDB.find().sort("anime_name", -1)
+    return render_template("edit_anime.html", categories = categories)
 
 @app.route('/add_anime', methods=["GET", "POST"])
 def add_anime():
