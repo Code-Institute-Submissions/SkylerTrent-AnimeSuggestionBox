@@ -20,7 +20,13 @@ def get_anime():
 def anime_editor():
     return render_template("editor.html")
 
+@app.route('/index.html')
+def go_home():
+    return render_template("index.html", anime=mongo.db.myFirstMDB.find())
 
+@app.route('/edit_anime.html')
+def edit_anime():
+    return render_template("edit_anime.html", anime=mongo.db.myFirstMDB.find())
 
 @app.route('/add_anime', methods=["GET", "POST"])
 def add_anime():
@@ -35,9 +41,8 @@ def add_anime():
         mongo.db.myFirstMDB.insert_one(anime)
         return redirect(url_for("get_anime"))
 
-@app.route('/index.html')
-def go_home():
-    return render_template("index.html", anime=mongo.db.myFirstMDB.find())
+
+
 
 
 
