@@ -11,23 +11,34 @@ app.config["MONGO_DBNAME"] = 'myTestDB'
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 @app.route('/get_anime')
 def get_anime():
     return render_template("index.html", anime=mongo.db.myFirstMDB.find())
 
-@app.route('/editor.html')
+
+@app.route('/editor')
 def anime_editor():
     return render_template("editor.html")
 
-@app.route('/index.html')
+@app.route('/')
+@app.route('/index')
 def go_home():
     return render_template("index.html", anime=mongo.db.myFirstMDB.find())
 
-@app.route('/edit_anime.html')
-def edit_anime():
+@app.route('/edit_anime_accordian')
+def anime_or_delete():
+    return render_template("edit_anime_accordian.html", anime=mongo.db.myFirstMDB.find())
+
+@app.route("/edit_anime/<anime_id>", methods=["GET", "POST"])
+def edit_anime(anime_id):
+    anime = mongo.db.myFirstMDB.find_one({"_id": ObjectId(anime_id)})
+    print("TESTING ANIME:", anime)
     categories = mongo.db.myFirstMDB.find().sort("anime_name", -1)
-    return render_template("edit_anime.html", categories = categories)
+    return render_template("edit_anime.html", anime=anime, categories = categories) 
+
+
 
 @app.route('/add_anime', methods=["GET", "POST"])
 def add_anime():
@@ -41,11 +52,6 @@ def add_anime():
         }
         mongo.db.myFirstMDB.insert_one(anime)
         return redirect(url_for("get_anime"))
-
-
-
-
-
 
 
 if __name__ == '__main__':
