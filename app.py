@@ -53,6 +53,11 @@ def edit_anime(anime_id):
     return render_template("edit_anime.html", anime=anime, categories = categories) 
 
 
+@app.route("/delete_anime/<anime_id>")
+def delete_anime(anime_id):
+    mongo.db.myFirstMDB.remove({"_id": ObjectId(anime_id)})
+    return redirect(url_for("get_anime"))
+
 @app.route('/add_anime', methods=["GET", "POST"])
 def add_anime():
     if request.method == "POST":

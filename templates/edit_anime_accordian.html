@@ -54,7 +54,7 @@
       <div class="collapsible-header darken-4 text-shadow accord_bg_color" >
             <div class="col s3">
                 <i class="material-icons">arrow_drop_down</i>
-                <a class=" waves-light btn-small test done_btn" href="">Done</a>
+                <a class=" waves-light btn-small test done_btn" href="{{ url_for('delete_anime', anime_id=show._id)}}">Delete</a>
                 <a class=" waves-light btn-small test" href="{{ url_for('edit_anime', anime_id=show._id)}}">Edit</a>
                 <strong> &nbsp;&nbsp;&nbsp; {{ show.anime_name }} </strong>
             </div>
