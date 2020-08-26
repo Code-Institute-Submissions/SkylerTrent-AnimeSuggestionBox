@@ -18,6 +18,9 @@
      color: #2C3E50 !important;
  }
  
+ .test {
+  color: white !important;
+}
 
 #arrow {
     text-decoration: none;
@@ -25,7 +28,6 @@
 }
  .arrow_back {
      float: right;
-     margin-top: 20px;
      margin-bottom: 20px;
  }
 
@@ -96,6 +98,24 @@
   align-items: center;
   justify-content: center;
   
+}
+
+.done_btn {
+    background-color: #A62633 !important;
+}
+
+.btn-small{
+    margin:5px;
+}
+
+.collapsible-header .col strong {
+    margin: 5px;
+    line-height: 42px;
+}
+
+.accord_bg_color {
+    background-color: white !important;
+    color: #6C7585 !important;
 }
 
 .hide {
