@@ -35,40 +35,42 @@
        <!-- ANIME NAME -->
 <div class="row">
     <form class="col s12 container" method="POST" action="{{ url_for('edit_anime', anime_id=anime._id) }}">
+      
       <div class="row">
         <div class="input-field col s6 l6">
-          <input name="anime_name" id="anime_name" type="text" class="validate" required>
+          <input name="anime_name" id="anime_name" type="text" class="validate" value="{{ anime.anime_name}}" required>
           <label for="anime_name">Anime Name</label>
         </div>
       </div>
       <!-- ANIME DESCRIPTION -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_description" name="anime_description" type="text" class="validate" required>
+          <input id="anime_description" name="anime_description" type="text" class="validate" value="{{ anime.anime_description}}" required>
           <label for="anime_description">Description</label>
         </div>
       </div>
       <!-- RELEASE DATE -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_release_date" name="anime_release_date" type="text" class="validate" required>
+          <input id="anime_release_date" name="anime_release_date" type="text" class="validate" value="{{ anime.anime_release_date}}" required>
           <label for="anime_release_date">Release Date</label>
         </div>
       </div>
       <!-- IMAGE URL -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_image" name="anime_image" type="text" class="validate" required>
+          <input id="anime_image" name="anime_image" type="text" class="validate" value="{{ anime.anime_image}}" required>
           <label for="anime_image">Image URL</label>
         </div>
       </div>
       <!-- URL TO WATCH ANIME -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_url" name="anime_url" type="text" class="validate" required>
+          <input id="anime_url" name="anime_url" type="text" class="validate" value="{{ anime.anime_url}}" required>
           <label for="anime_url">URL To Watch Anime</label>
         </div>
         <div class="col-sm-12 col-lg-12">
+            <a href="{{ url_for('get_anime')}}" class="btn-large waves-effect waves-light test done_btn">Cancel<i class="material-icons right">cancel</i></button></a>
             <button class="btn-large waves-effect waves-light" type="submit">Submit Edit<i class="material-icons right">send</i></button>
         </div>
       </div>
