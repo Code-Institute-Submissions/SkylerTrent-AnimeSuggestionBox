@@ -14,7 +14,8 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_anime')
 def get_anime():
-    return render_template("index.html", anime=mongo.db.myFirstMDB.find())
+    return render_template("index.html", 
+                          anime=mongo.db.myFirstMDB.find())
 
 
 @app.route('/editor')
