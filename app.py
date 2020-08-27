@@ -12,7 +12,6 @@ app.config["MONGO_DBNAME"] = 'myTestDB'
 mongo = PyMongo(app)
 
 
-@app.route('/')
 @app.route('/get_anime')
 def get_anime():
     return render_template("index.html", anime=mongo.db.myFirstMDB.find())
