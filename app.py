@@ -23,7 +23,7 @@ def anime_editor():
     return render_template("editor.html")
 
 
-@app.route('/')
+
 @app.route('/index')
 def go_home():
     return render_template("index.html", anime=mongo.db.myFirstMDB.find())
