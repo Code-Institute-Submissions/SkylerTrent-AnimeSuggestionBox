@@ -14,14 +14,12 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_anime')
 def get_anime():
-    return render_template("index.html", 
-                          anime=mongo.db.myFirstMDB.find())
+    return render_template("index.html", anime=mongo.db.myFirstMDB.find())
 
 
 @app.route('/editor')
 def anime_editor():
     return render_template("editor.html")
-
 
 
 @app.route('/index')
@@ -50,13 +48,14 @@ def edit_anime(anime_id):
     anime = mongo.db.myFirstMDB.find_one({"_id": ObjectId(anime_id)})
     print("TESTING ANIME:", anime)
     categories = mongo.db.myFirstMDB.find().sort("anime_name", -1)
-    return render_template("edit_anime.html", anime=anime, categories = categories) 
+    return render_template("edit_anime.html", anime=anime, categories=categories)
 
 
 @app.route("/delete_anime/<anime_id>")
 def delete_anime(anime_id):
     mongo.db.myFirstMDB.remove({"_id": ObjectId(anime_id)})
     return redirect(url_for("get_anime"))
+
 
 @app.route('/add_anime', methods=["GET", "POST"])
 def add_anime():
@@ -75,4 +74,4 @@ def add_anime():
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
