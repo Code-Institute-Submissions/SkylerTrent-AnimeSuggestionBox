@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 {% extends 'base.html' %} {% block nav %} {% endblock%} {% block content %}
 <!-- Compiled and minified CSS -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
 <section class="page-section portfolio" id="portfolio">
   <div class="container">
     <!-- Portfolio Section Heading-->
@@ -65,6 +62,9 @@
             <li><strong>Release Date:</strong> {{ show.anime_release_date }}</li>
             <li><strong>Anime Image URL:</strong>&nbsp;{{ show.anime_image }}</li>
             <li><strong>URL To Watch Anime:</strong>&nbsp;{{ show.anime_url }}</li>
+            <li><strong>Genre:</strong>&nbsp;{{ show.anime_genre }}</li>
+            <li><strong>Country:</strong>&nbsp;{{ show.anime_country }}</li>
+            <li><strong>Production Studio:</strong>&nbsp;{{ show.anime_studio }}</li>
         </ul>
       </div>
     </li>

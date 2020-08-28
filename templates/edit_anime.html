@@ -65,12 +65,34 @@
           <label for="anime_image">Image URL</label>
         </div>
       </div>
+      <!-- Genre -->
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="anime_genre" name="anime_genre" type="text" class="validate" value="{{ anime.anime_genre}}" required>
+          <label for="anime_genre">Genre</label>
+        </div>
+      </div>
+      <!-- Country -->
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="anime_country" name="anime_country" type="text" class="validate" value="{{ anime.anime_country}}" required>
+          <label for="anime_country">Country</label>
+        </div>
+      </div>
+      <!-- Studio -->
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="anime_studio" name="anime_studio" type="text" class="validate" value="{{ anime.anime_studio}}" required>
+          <label for="anime_studio">Production Studio</label>
+        </div>
+      </div>
       <!-- URL TO WATCH ANIME -->
       <div class="row">
         <div class="input-field col s12">
           <input id="anime_url" name="anime_url" type="text" class="validate" value="{{ anime.anime_url}}" required>
           <label for="anime_url">URL To Watch Anime</label>
         </div>
+
         <div class="col-sm-12 col-lg-12">
             <a href="{{ url_for('get_anime')}}" class="btn-large waves-effect waves-light test done_btn">Cancel<i class="material-icons right">cancel</i></button></a>
             <button  class="btn-large waves-effect waves-light" type="submit">Submit Edit<i class="material-icons right">send</i></button>
