@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% block index %}
+{% block index %}  
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -7,6 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Anime Suggestion Box</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -15,10 +16,9 @@
         <!--Import Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" type="text/css" />
     </head>
-        
     <body id="page-top">
         {% block nav %}
         <!-- Navigation-->
