@@ -10,6 +10,40 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/*Navbar*/
+.nav_ul {
+    margin-right: 200px !important;
+}
+
+.nav-wrapper {
+    background-color: #2C3E50 !important;
+}
+
+.brand-logo {
+    margin-left: 25px !important;
+}
+
+.anchor {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.active {
+    background-color: #1ABC9C !important;
+}
+
+.nav_txt {
+    font-weight: 700 !important;
+    font-size: 15px !important;
+}
+
+.brand_txt {
+    font-weight: 700 !important;
+}
+
+.sidenav {
+     background-color: #2C3E50 !important;
+}
 
 /*Custom Button sizes*/
  .card_button {
@@ -25,12 +59,16 @@
      height: 60px !important
  }
 
+.anime_list_editor_button {
+    height: 60px; 
+}
 .card {
     margin-top: 25px !important;
 }
 
 #accordian_container{
     margin-bottom: 80px !important;
+    margin-top: 80px !important;
 }
 
  #editor {
