@@ -11,6 +11,20 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
+/*Custom Button sizes*/
+ .card_button {
+     height: 45px !important;
+ }
+
+ .reset_button {
+     background-color: #A62633 !important;
+     border-color: #A62633 !important;
+ }
+
+ .contact_button {
+     height: 60px !important
+ }
+
 .card {
     margin-top: 25px !important;
 }
@@ -10217,6 +10231,7 @@ h3 {
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
     color: #fff;
     background: #1abc9c;
+    height: 80px;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
     color: #fff;
