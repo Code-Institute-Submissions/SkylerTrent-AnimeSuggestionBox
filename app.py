@@ -17,6 +17,13 @@ def get_anime():
     return render_template("index.html", anime=mongo.db.myFirstMDB.find())
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    anime = list(mongo.db.myFirstMDB.find({"$text": {"$search": query}}))
+    return render_template("index.html", anime=anime)
+
+
 @app.route('/editor')
 def anime_editor():
     return render_template("editor.html")
@@ -40,13 +47,13 @@ def edit_anime(anime_id):
             "anime_description": request.form.get("anime_description"),
             "anime_release_date": request.form.get("anime_release_date"),
             "anime_image": request.form.get("anime_image"),
-            "anime_url": request.form.get("anime_url")
+            "anime_url": request.form.get("anime_url"),
+            "anime_genre": request.form.get("anime_genre")
         }
         mongo.db.myFirstMDB.update({"_id": ObjectId(anime_id)}, submit)
         return redirect(url_for("get_anime"))
 
     anime = mongo.db.myFirstMDB.find_one({"_id": ObjectId(anime_id)})
-    print("TESTING ANIME:", anime)
     categories = mongo.db.myFirstMDB.find().sort("anime_name", -1)
     return render_template("edit_anime.html", anime=anime, categories=categories)
 
@@ -65,7 +72,10 @@ def add_anime():
             "anime_description": request.form.get("anime_description"),
             "anime_release_date": request.form.get("anime_release_date"),
             "anime_image": request.form.get("anime_image"),
-            "anime_url": request.form.get("anime_url")
+            "anime_url": request.form.get("anime_url"),
+            "anime_genre": request.form.get("anime_genre"),
+            "anime_country": request.form.get("anime_country"),
+            "anime_studio": request.form.get("anime_studio")
         }
         mongo.db.myFirstMDB.insert_one(anime)
         return redirect(url_for("get_anime"))
