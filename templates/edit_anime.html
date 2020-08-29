@@ -20,9 +20,9 @@
         </nav>
     </div>
          <ul class="sidenav" id="mobile-demo">
-            <li><a class="anchor nav_txt" href="#portfolio">Home</a></li>
-            <li><a class="anchor nav_txt" href="#about">Anime List Editor</a></li>
-            <li><a class="anchor nav_txt" href="#contact">Contact</a></li>
+           <li><a class="anchor nav_txt" href="/index#portfolio">Home</a></li>
+            <li><a class="anchor nav_txt" href="/index#about">Anime List Editor</a></li>
+            <li><a class="anchor nav_txt" href="/index#contact">Contact</a></li>
         </ul>
 <section class="page-section portfolio" id="portfolio">
             <div class="container">
@@ -40,9 +40,14 @@
 <!--FORM CRUD BUTTONS -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-3 col-lg-2">
-            <a id= "arrow" href="/edit_anime_accordian"><i class="material-icons medium arrow_back">arrow_back</i></a>
-        </div>
+        <div class="container">
+    <ul class="breadcrumb">
+        <li><a href="/editor">Add Anime</a></li>
+        <li><a href="/edit_anime_accordian">Edit/Delete Anime</a></li>
+        <li><a href="#" class="active">Editing Selected Anime</a></li>
+    </ul>
+</div>
+
         <div class="col-sm-12 col-lg-12" id="pge_link_container">
             <ul>
                 <a class="waves-effect waves-light btn-large edit_btns" href="/editor"><i class="material-icons left">add</i>Add Anime</a>
@@ -120,4 +125,5 @@
       
     </form>
   </div>
+  
 {% endblock %}
