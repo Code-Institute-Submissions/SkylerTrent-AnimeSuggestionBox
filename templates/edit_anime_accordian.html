@@ -2,6 +2,25 @@
 {% extends 'base.html' %} {% block nav %} {% endblock%} {% block content %}
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+<!-- Navigation-->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/index" class="brand-logo anchor brand_txt">Anime Box</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down nav_ul">
+                    <li ><a href="/index#portfolio" class="anchor nav_txt">Home </a></li>
+                    <li><a href="/index#about" class="anchor nav_txt">Anime List Editor</a></li>
+                    <li><a href="/index#contact" class="anchor nav_txt">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+         <ul class="sidenav" id="mobile-demo">
+            <li><a class="anchor nav_txt" href="#portfolio">Home</a></li>
+            <li><a class="anchor nav_txt" href="#about">Anime List Editor</a></li>
+            <li><a class="anchor nav_txt" href="#contact">Contact</a></li>
+        </ul>
 <section class="page-section portfolio" id="portfolio">
   <div class="container">
     <!-- Portfolio Section Heading-->
