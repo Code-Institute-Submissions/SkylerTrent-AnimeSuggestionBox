@@ -36,8 +36,10 @@ I have provided an active link to my Wireframes.
 Wireframes were used to assist in the creation of my site. They played a key role throughout its development. The Wireframes helped make the responsive design as well as the nav-bar that was used throughout the site on each of the pages. 
 
 1. Wireframes:
-   1. Index/Home Page https://wireframe.cc/CGX5ra
-   1. Gallery Page https://wireframe.cc/TsrS12
+   1. https://wireframepro.mockflow.com/view/ 
+M0b839d96543026253f9ee4885ec9a2d11598974831077
+
+   
    
 
 ## Features
