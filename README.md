@@ -217,6 +217,33 @@ To deploy this page to GitHub Pages from its GitHub repository, the following st
 1. On selecting Master Branch, the page is automatically refreshed, the website is now deployed.
 1. Scroll back down to the GitHub Pages section to retrieve the link to the deployed website.
 
+I Deployed my app on Heroku as well.
+
+### How I did it 
+
+1. Set up a Heroku account
+
+2. Create an application, this must be a unique name  
+
+3. Go to settings and set the VARS for IP, PORT and SECERT KEYS for the API and MONGODB
+
+4. Go back to the terminal and type - “Heroku login” this will take you to a webpage to login to your Heroku account 
+
+5. Use “git init“ to initialise and new repository
+
+6. type the command “pip3 freeze > requirements.txt” this will add a new2 file with all the packages to run your python app 
+
+7.  create a profile “echo web: python run.py > Profile” if your python file is called run.py
+
+8. run the command “git remote add” and the app URL which can be found on the Heroku dashboard
+
+8. do a “git add .”
+
+9. commit your code ‘git commit -m” your message here”’ 
+
+10. then run “git push Heroku master”
+
+11. This will then deploy your app
 
 
 ### How to run this program locally
@@ -227,7 +254,7 @@ In the Clone with HTTPs section, copy the clone URL for the repository.
 In your local IDE open Git Bash.
 Change the current working directory to the location where you want the cloned directory to be made.
 Type git clone, and then paste the URL you copied in Step 3.
-git clone https://github.com/SkylerTrent/up-in-smoke-bbq
+git clone https://github.com/SkylerTrent/AnimeSuggestionBox
 Press Enter. Your local clone will be created.
 Further reading and troubleshooting on cloning a repository from GitHub here.
 
