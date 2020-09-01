@@ -79,6 +79,15 @@
   margin-top: 80px !important;
 }
 
+.card-img-top {
+    height: 30vh !important;
+}
+
+.card-text {
+   min-height: 15vh !important;
+   max-height: 30vh !important;
+}
+
 #editor {
   font-size: 36px;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
