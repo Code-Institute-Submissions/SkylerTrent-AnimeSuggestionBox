@@ -170,22 +170,41 @@ The following workflow steps are used to create and update branches within Gitpo
     
 ## Testing
 
-1. Contact Form:
-   1. Go to the "Contact" page
-   1. Try to submit the empty form and verify that an error message about the required fields appears
-   1. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   1. Try to submit the form with all inputs valid and verify that a success message appears.
-   1. **Conclusion: By following these steps I was able to verify the 'Contact' page works successfully.**
+1. Viewing Anime:
+   1. Navigate to https://anime-suggestion-box.herokuapp.com/
+   1. Scroll down to Anime.
+   1. View the different Anime cards auto populated from the database.
+   1. **Conclusion: By following these steps I was able to verify the 'Home' page works successfully and that you can view anime suggestions.**
    
-1. Photo Gallery:
-   1. Go to the 'Gallery' page
-   1. Scroll halfway down the page until you reach 'Photo Gallery' section
-   1. Hover the Photo Gallery Button-
-   1. Select one of the 3 different photo gallery types
-   1. **Conclusion: By following these steps I was able to verify all photo's in the gallerys were working**
+1. Adding Anime:
+   1. Navigate to https://anime-suggestion-box.herokuapp.com/
+   1. Select "Add Anime" from the navbar 
+   1. fill in the necessary form information
+   1. Scroll to bottom of the form
+   1. Click the "Submit Buttom"
+   1. You will be redirected to the home page and the anime that you added will be the last one at the bottom of the list.
+   1. **Conclusion: By following these steps I was able to verify the 'Add Anime Function' works successfully and that you can add anime to the list.**
    
-
-1. Responsiveness:
+1. Editing Anime:
+   1. Navigate to https://anime-suggestion-box.herokuapp.com/
+   1. Select "Edit Anime" from the navbar 
+   1. Select Anime that you wish to edit
+   1. Change desired form information
+   1. Scroll to bottom of the form
+   1. Click the "Submit Buttom"
+   1. You will be redirected to the home page and the anime that you added will be the last one at the bottom of the list.
+   1. **Conclusion: By following these steps I was able to verify the 'Edit Anime Function' works successfully and that you can edit anime already on the list.**
+   
+1. Deleting Anime:
+   1. Navigate to https://anime-suggestion-box.herokuapp.com/
+   1. Select "Delete Anime" from the navbar 
+   1. Select Anime that you wish to edit
+   1. Scroll to bottom of the form
+   1. Click the "Submit Buttom"
+   1. You will be redirected to the home page and the anime that you deleted will no longer be on the list.
+   1. **Conclusion: By following these steps I was able to verify the 'Delete Anime Function' works successfully and that you can delete existing anime from the list.**
+   
+1. Responiveness
    1. Navigate to 'Home' Page
    1. Open Chrome Dev tools by pressing the F12 key or by right-clicking the mouse on the page and selecting 'Inspect'
    1. Click the 'Responsive' drop-down option, located directly below the bookmark bar in Chrome
@@ -205,6 +224,67 @@ The following workflow steps are used to create and update branches within Gitpo
    1. https://jigsaw.w3.org/css-validator/
    1. https://esprima.org/demo/validate used to test/validate Javascript.
    1. **Code passed all of the validation criteria**
+   
+### **Testing Devices**
+
+The site was tested on various devices, including on mobile, laptop and desktop platforms. I list these below:
+
+#### **Mobile Devices**
+
+* Galaxy A5 (Running Android Oreo 8.0.0)
+* Fairphone 3 (Running Fairphone OS C20134228)
+* iPhone XR (Running iOS 13)
+* iPhone SE (Running iOS 13)
+* iPhone 7 (Running iOS 13.4.1)
+* iPhone 6 (Running iOS 12.4.4)
+
+#### **Laptop Devices**
+
+* HP Pavilion (Running Windows 10)
+* Dell Latitude (Running Windows 10)
+* MacBook Air (Running Mojave)
+
+#### **Desktop Devices**
+
+* Asus G20CB-UK032T Core i7-6700 (Running Windows 10)
+
+### **Developer Tools**
+
+I tested the site in **Developer Tools** on six internet browsers (**Chrome**, **Firefox**, **Opera**, **Edge**, **Internet Explorer** & **Safari**). Bugs and errors were tackled successfully in this way throughout the development process.
+
+* [**Chrome**](https://www.google.com/chrome/?brand=CHBD&gclid=Cj0KCQjwkK_qBRD8ARIsAOteukDltqXTjp13--esZkC4d8eL6Ggma28pvUQiVvwnJwVA06i0YbiSIuwaArNOEALw_wcB&gclsrc=aw.ds) (Version 81.0.4044.138)
+
+* [**Firefox**](https://www.mozilla.org/en-US/firefox/new/) (Version 76.0.1)
+
+* [**Opera**](https://www.mozilla.org/en-US/firefox/new/) (Version 68.0.3618.104)
+
+* [**Edge**](https://www.mozilla.org/en-US/firefox/new/) (Version 44.18362.449.0)
+
+* [**Internet Explorer**](https://www.microsoft.com/en-ie/download/internet-explorer.aspx) (Version 11.836.18362.0)
+
+* [**Safari**](https://www.apple.com/lae/safari/) (Version 13.1)
+
+I also tested on the specific resolutions shown below:
+
+#### **Mobile Resolutions**
+
+* iPhone 4 (320 x 480)
+* Galaxy S5 (360 x 640)
+* iPhone X (375 x 812)
+
+#### **Tablet Resolutions**
+
+* iPad (768 x 1024)
+* iPad Pro (1024 x 1366)
+
+#### **Desktop Resolutions**
+
+* Laptop with MDPI Screen (1280 x 800)
+* Laptop with HiDPI Screen (1440 x 900)
+* Gaming Desktop (2560 x 1440)
+* 4K Monitor (3840 x 2160)
+* 4k Plus (4000 x 2200)
+
     
  
 ## Deployment
@@ -258,9 +338,24 @@ git clone https://github.com/SkylerTrent/AnimeSuggestionBox
 Press Enter. Your local clone will be created.
 Further reading and troubleshooting on cloning a repository from GitHub here.
 
-## Credits
 
-### Media
-1. Photos:
-  1. Google Images
-  1. Eventbrite.com
+## **Credits**
+
+### **Code Used**
+
+* **Freelancer Theme**  
+
+The template used to create the site.
+
+- Source: https://startbootstrap.com/themes/freelancer/
+- Preview Site: https://startbootstrap.com/previews/freelancer/
+
+* **Creating Task App**
+I was able to apply the knowledge learned in this mini project to my own milestone project which helped exponentially. 
+
+### **Images Used**
+
+I do not own any of the images used in this project. They were all found by Google searching their respective anime names,
+
+* Several images were sourced from [**Google**](https://google.com/).
+
