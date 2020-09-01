@@ -1,127 +1,189 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
-{% block nav %}
-{% endblock %}
-{% block content %}
+{% extends 'base.html' %} {% block nav %} {% endblock %} {% block content %}
 <!-- Navigation-->
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="/index" class="brand-logo anchor brand_txt">Anime Box</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down nav_ul">
-                    <li ><a href="/index" class="anchor nav_txt">Home </a></li>
-                    <li><a href="#about" class="anchor nav_txt">Anime List Editor</a></li>
-                    <li><a href="/editor" class="anchor nav_txt">Add Anime</a></li>
-                    <li><a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a></li>
-                </ul>
-            </div>
-        </nav>
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/index" class="brand-logo anchor brand_txt">Anime Box</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+        ><i class="material-icons">menu</i></a
+      >
+      <ul class="right hide-on-med-and-down nav_ul">
+        <li><a href="/index" class="anchor nav_txt">Home </a></li>
+        <li><a href="#about" class="anchor nav_txt">Anime List Editor</a></li>
+        <li><a href="/editor" class="anchor nav_txt">Add Anime</a></li>
+        <li>
+          <a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a>
+        </li>
+      </ul>
     </div>
-         <ul class="sidenav" id="mobile-demo">
-            <li><a class="anchor nav_txt" href="/index">Home</a></li>
-            <li><a class="anchor nav_txt" href="#about">Anime List Editor</a></li>
-            <li><a class="anchor nav_txt" href="/editor">Add Anime</a></li>
-            <li><a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a></li>
-        </ul>
-
-<section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- Portfolio Section Heading-->
-                <h1 class="page-section-heading text-center text-uppercase  mb-0 editor_txt_color">Anime Editor </h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <h3 class="text-center text-uppercase mb-0 editor_txt_color">Add Anime</h3>
-            </div>
-</section>
-
-<div class="container">
-    <ul class="breadcrumb">
-        <li><a href="/editor" class="active">Add Anime</a></li>
-        <li><a href="/edit_anime_accordian">Edit/Delete Anime</a></li>
-    </ul>
+  </nav>
 </div>
-
- 
-
+<!-- Collabsable Nav -->
+<ul class="sidenav" id="mobile-demo">
+  <li><a class="anchor nav_txt" href="/index">Home</a></li>
+  <li><a class="anchor nav_txt" href="#about">Anime List Editor</a></li>
+  <li><a class="anchor nav_txt" href="/editor">Add Anime</a></li>
+  <li><a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a></li>
+</ul>
+<section class="page-section portfolio" id="portfolio">
+  <div class="container">
+    <!-- Portfolio Section Heading-->
+    <h1
+      class="page-section-heading text-center text-uppercase mb-0 editor_txt_color"
+    >
+      Anime Editor
+    </h1>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+    <h3 class="text-center text-uppercase mb-0 editor_txt_color">Add Anime</h3>
+  </div>
+</section>
+<div class="container">
+  <ul class="breadcrumb">
+    <li><a href="/editor" class="active">Add Anime</a></li>
+    <li><a href="/edit_anime_accordian">Edit/Delete Anime</a></li>
+  </ul>
+</div>
 <!--FORM CRUD BUTTONS -->
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12 col-lg-12" id="pge_link_container">
-            <ul>
-                <a class="waves-effect waves-light btn-large edit_btns" style="background-color: #2C3E50 !important;"><i class="material-icons left">add</i>Add Anime</a>
-                <a class="waves-effect waves-light btn-large edit_btns" href="/edit_anime_accordian"><i class="material-icons left">edit</i>Edit or Delete Anime</a>
-            </ul>
-        </div>
+  <div class="row">
+    <div class="col-sm-12 col-lg-12" id="pge_link_container">
+      <ul>
+        <a
+          class="waves-effect waves-light btn-large edit_btns btn_pad ed_button"
+          ><i class="material-icons left">add</i>Add Anime</a
+        >
+        <a
+          class="waves-effect waves-light btn-large edit_btns btn_pad"
+          href="/edit_anime_accordian"
+          ><i class="material-icons left">edit</i>Edit or Delete Anime</a
+        >
+      </ul>
     </div>
+  </div>
 </div>
-       <!-- ANIME NAME -->
-<div class="row">
-    <form class="col s12 container" method="POST" action="{{ url_for('add_anime')}}">
+<div class="container">
+  <!-- ANIME NAME -->
+  <div class="row">
+    <form
+      class="col s12 container"
+      method="POST"
+      action="{{ url_for('add_anime')}}"
+    >
       <div class="row">
         <div class="input-field col s6 l6">
-          <input name="anime_name" id="anime_name" type="text" class="validate" required>
+          <input
+            name="anime_name"
+            id="anime_name"
+            type="text"
+            class="validate"
+            required
+          />
           <label for="anime_name">Anime Name</label>
         </div>
       </div>
       <!-- ANIME DESCRIPTION -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_description" name="anime_description" type="text" class="validate" required>
+          <input
+            id="anime_description"
+            name="anime_description"
+            type="text"
+            class="validate"
+            required
+          />
           <label for="anime_description">Description</label>
         </div>
       </div>
       <!-- RELEASE DATE -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_release_date" name="anime_release_date" type="text" class="validate" required>
+          <input
+            id="anime_release_date"
+            name="anime_release_date"
+            type="text"
+            class="validate"
+            required
+          />
           <label for="anime_release_date">Release Date</label>
         </div>
       </div>
       <!-- IMAGE URL -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_image" name="anime_image" type="text" class="validate" required>
+          <input
+            id="anime_image"
+            name="anime_image"
+            type="text"
+            class="validate"
+            required
+          />
           <label for="anime_image">Image URL</label>
         </div>
       </div>
       <!-- Anime Country -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_country" name="anime_country" type="text" class="validate" required>
+          <input
+            id="anime_country"
+            name="anime_country"
+            type="text"
+            class="validate"
+            required
+          />
           <label for="anime_country">Country</label>
         </div>
       </div>
       <!-- Anime Studio -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_studio" name="anime_studio" type="text" class="validate" required>
+          <input
+            id="anime_studio"
+            name="anime_studio"
+            type="text"
+            class="validate"
+            required
+          />
           <label for="anime_studio">Production Studio</label>
         </div>
       </div>
       <!-- IMAGE Genre -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_genre" name="anime_genre" type="text" class="validate" required>
+          <input
+            id="anime_genre"
+            name="anime_genre"
+            type="text"
+            class="validate"
+            required
+          />
           <label for="anime_genre">Genre</label>
         </div>
       </div>
       <!-- URL TO WATCH ANIME -->
       <div class="row">
         <div class="input-field col s12">
-          <input id="anime_url" name="anime_url" type="text" class="validate" required>
+          <input
+            id="anime_url"
+            name="anime_url"
+            type="text"
+            class="validate"
+            required
+          />
           <label for="anime_url">URL To Watch Anime</label>
         </div>
         <div class="col-sm-12 col-lg-12">
-            <button class="btn-large waves-effect waves-light" type="submit">Submit<i class="material-icons right">send</i></button>
+          <button class="btn-large waves-effect waves-light" type="submit">
+            Submit<i class="material-icons right">send</i>
+          </button>
         </div>
       </div>
-      
     </form>
   </div>
+</div>
 {% endblock %}
-
