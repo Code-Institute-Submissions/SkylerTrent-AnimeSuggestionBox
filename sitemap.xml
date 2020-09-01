@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/index</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/editor</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/edit_anime_accordian</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/get_anime</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/edit_anime/5f2c0d1ff92b2d1d383457a3</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/edit_anime/5f3bb6feefbec6e788479bb8</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/edit_anime/5f3bb705efbec6e788479bb9</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/edit_anime/5f3bb712efbec6e788479bba</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/edit_anime/5f3bb719efbec6e788479bbb</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://anime-suggestion-box.herokuapp.com/edit_anime/5f4670137727aa5d38698cb3</loc>
+  <lastmod>2020-09-01T14:34:05+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
