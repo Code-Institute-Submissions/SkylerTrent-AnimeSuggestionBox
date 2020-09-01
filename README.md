@@ -1,5 +1,5 @@
 # AnimeSuggestionBox
-![Project Image](/static/images/gurren.jpg)
+![Project Image](/static/assets/img/portfolio/gurren.jpg)
 ## **Introduction**
 
 This is the repository for **The Anime Suggestion Box** website.
