@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 {% extends 'base.html' %} {% block nav %} {% endblock%} {% block content %}
 <!-- Navigation-->
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="/index" class="brand-logo anchor brand_txt">Anime Box</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down nav_ul">
-                    <li ><a href="/index" class="anchor nav_txt">Home </a></li>
-                    <li><a href="#about" class="anchor nav_txt">Anime List Editor</a></li>
-                    <li><a href="/editor" class="anchor nav_txt">Add Anime</a></li>
-                    <li><a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a></li>
-                </ul>
-            </div>
-        </nav>
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/index" class="brand-logo anchor brand_txt">Anime Box</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+        ><i class="material-icons">menu</i></a
+      >
+      <ul class="right hide-on-med-and-down nav_ul">
+        <li><a href="/index" class="anchor nav_txt">Home </a></li>
+        <li><a href="#about" class="anchor nav_txt">Anime List Editor</a></li>
+        <li><a href="/editor" class="anchor nav_txt">Add Anime</a></li>
+        <li>
+          <a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a>
+        </li>
+      </ul>
     </div>
-         <ul class="sidenav" id="mobile-demo">
-            <li><a class="anchor nav_txt" href="/index">Home</a></li>
-            <li><a class="anchor nav_txt" href="#about">Anime List Editor</a></li>
-            <li><a class="anchor nav_txt" href="/editor">Add Anime</a></li>
-            <li><a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a></li>
-        </ul>
-
+  </nav>
+</div>
+<!-- Collabsable Nav -->
+<ul class="sidenav" id="mobile-demo">
+  <li><a class="anchor nav_txt" href="/index">Home</a></li>
+  <li><a class="anchor nav_txt" href="#about">Anime List Editor</a></li>
+  <li><a class="anchor nav_txt" href="/editor">Add Anime</a></li>
+  <li><a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a></li>
+</ul>
 <section class="page-section portfolio" id="portfolio">
   <div class="container">
     <!-- Portfolio Section Heading-->
@@ -43,56 +47,64 @@
 <div class="container-fluid">
   <div class="row">
     <div class="container">
-    <ul class="breadcrumb">
+      <ul class="breadcrumb">
         <li><a href="/editor">Add Anime</a></li>
-        <li><a class="active" href="/edit_anime_accordian">Edit/Delete Anime</a></li>
-    </ul>
-</div>
-
+        <li>
+          <a class="active" href="/edit_anime_accordian">Edit/Delete Anime</a>
+        </li>
+      </ul>
+    </div>
     <div class="col-sm-12 col-lg-12" id="pge_link_container">
       <ul>
-        <a
-          class="waves-effect waves-light btn-large edit_btns"
-          href="/editor"
+        <a class="waves-effect waves-light btn-large edit_btns" href="/editor"
           ><i class="material-icons left">add</i>Add</a
         >
-        <a
-          class="waves-effect waves-light btn-large edit_btns"
-          style="background-color: #2c3e50 !important;"
+        <a class="waves-effect waves-light btn-large edit_btns ed_button"
           ><i class="material-icons left">edit</i>Edit Or Delete Anime</a
         >
-        
       </ul>
     </div>
   </div>
 </div>
 <div class="container" id="accordian_container">
- <ul class="collapsible">
- {% for show in anime %}
+  <ul class="collapsible">
+    {% for show in anime %}
     <li>
-      <div class="collapsible-header darken-4 text-shadow accord_bg_color" >
-            <div class="col s3">
-                <i class="material-icons">arrow_drop_down</i>
-                <a class=" waves-light btn-small test done_btn" href="{{ url_for('delete_anime', anime_id=show._id)}}">Delete</a>
-                <a class=" waves-light btn-small test" href="{{ url_for('edit_anime', anime_id=show._id)}}">Edit</a>
-                <strong> &nbsp;&nbsp;&nbsp; {{ show.anime_name }} </strong>
-            </div>
+      <div class="collapsible-header darken-4 text-shadow accord_bg_color">
+        <div class="col s3">
+          <i class="material-icons">arrow_drop_down</i>
+          <a
+            class="waves-light btn-small test done_btn"
+            href="{{ url_for('delete_anime', anime_id=show._id)}}"
+            >Delete</a
+          >
+          <a
+            class="waves-light btn-small test"
+            href="{{ url_for('edit_anime', anime_id=show._id)}}"
+            >Edit</a
+          >
+          <strong> &nbsp;&nbsp;&nbsp; {{ show.anime_name }} </strong>
+        </div>
       </div>
       <div class="collapsible-body">
-        <p><strong>Anime Description:</strong>&nbsp;{{ show.anime_description }}</p>
+        <p>
+          <strong>Anime Description:</strong>&nbsp;{{ show.anime_description }}
+        </p>
         <ul>
-            <li><strong>Release Date:</strong> {{ show.anime_release_date }}</li>
-            <li><strong>Anime Image URL:</strong>&nbsp;{{ show.anime_image }}</li>
-            <li><strong>URL To Watch Anime:</strong>&nbsp;{{ show.anime_url }}</li>
-            <li><strong>Genre:</strong>&nbsp;{{ show.anime_genre }}</li>
-            <li><strong>Country:</strong>&nbsp;{{ show.anime_country }}</li>
-            <li><strong>Production Studio:</strong>&nbsp;{{ show.anime_studio }}</li>
+          <li><strong>Release Date:</strong> {{ show.anime_release_date }}</li>
+          <li><strong>Anime Image URL:</strong>&nbsp;{{ show.anime_image }}</li>
+          <li>
+            <strong>URL To Watch Anime:</strong>&nbsp;{{ show.anime_url }}
+          </li>
+          <li><strong>Genre:</strong>&nbsp;{{ show.anime_genre }}</li>
+          <li><strong>Country:</strong>&nbsp;{{ show.anime_country }}</li>
+          <li>
+            <strong>Production Studio:</strong>&nbsp;{{ show.anime_studio }}
+          </li>
         </ul>
       </div>
     </li>
- {% endfor %}
+    {% endfor %}
   </ul>
 </div>
-
-
 {% endblock %}
