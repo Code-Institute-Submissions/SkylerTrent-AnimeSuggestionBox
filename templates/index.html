@@ -1,177 +1,247 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
-{% block index %}
+{% extends 'base.html' %} {% block index %}
 <html>
-    <body id="page-top">
+  <body id="page-top">
     <!-- Navigation-->
     <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="/index" class="brand-logo anchor brand_txt">Anime Box</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down nav_ul">
-                    <li ><a href="#portfolio" class="anchor nav_txt">Home </a></li>
-                    <li><a href="#about" class="anchor nav_txt">Anime List Editor</a></li>
-                    <li><a href="/editor" class="anchor nav_txt">Add Anime</a></li>
-                    <li><a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a></li>
-                </ul>
-            </div>
-        </nav>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/index" class="brand-logo anchor brand_txt">Anime Box</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down nav_ul">
+            <li><a href="#portfolio" class="anchor nav_txt">Home </a></li>
+            <li>
+              <a href="#about" class="anchor nav_txt">Anime List Editor</a>
+            </li>
+            <li><a href="/editor" class="anchor nav_txt">Add Anime</a></li>
+            <li>
+              <a class="anchor nav_txt" href="/edit_anime_accordian"
+                >Edit Anime</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
-         <ul class="sidenav" id="mobile-demo">
-            <li><a class="anchor nav_txt" href="#portfolio">Home</a></li>
-            <li><a class="anchor nav_txt" href="#about">Anime List Editor</a></li>
-            <li><a class="anchor nav_txt" href="/editor">Add Anime</a></li>
-            <li><a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a></li>
-        </ul>
-        <!-- Masthead-->
-        <header class="masthead bg-primary text-white text-center" >
-            <div class="container d-flex align-items-center flex-column">
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Watching</h1>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-            </div>
-        </header>
-        <!-- Anime Section-->
-        <section class="page-section portfolio" id="portfolio">
-            <div class="container">
-                <!-- AnimeSection Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Anime </h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-
-                 <!-- Anime Search Bar-->
-                <div class="row" id="accordian-container">
-                    <form action="{{ url_for('search') }}" method="post" class=" col s12">
-                        <div class="row valign-wrapper center-align">
-                            <div class="input-field col s12 ">
-                                <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
-                                <input type="text" name="query" id="query" minlength="3" required>
-                                <label for="query">Search Name, Genre, or Studio</label>
-                                <a href="{{ url_for('get_anime') }}" class="btn btn-lg btn-primary card_button reset_button">Reset</a>
-                                <button type="submit" class="btn btn-lg btn-primary card_button">
-                                   <i class="fas fa-search mr-2"></i> Search
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div> 
-
-                <!-- Anime Card Grid Items-->
-            </div>
-                <div class="container-fluid">
-                     <div class="row"> 
-            {% for show in anime %}
-            <div class="col-sm-3 ">
-                <div class="card">
-                    <img class="card-img-top" src="{{ show.anime_image }}" alt="">
-                    <div class="card-body">
-                        <h2 class="card-title">{{show.anime_name}}</h2>
-                        <p class="card-text">{{show.anime_description}}</p>
-                        <ul>
-                            <li><strong>Release Date:</strong> {{ show.anime_release_date }}</li>
-                            <li><strong>Country:</strong> {{ show.anime_country }}</li>
-                            <li><strong>Production Studio:</strong> {{ show.anime_studio }}</li>
-                            <li><strong>Genre</strong>&nbsp;{{ show.anime_genre }}</li>
-                        </ul>
-                        <a href="{{ show.anime_url }}" target="_blank"><button type="button" class="btn btn-lg btn-primary card_button">Watch</button></a>
-                    </div>        
-                </div>
-            </div>
-            {% endfor %}
-         </div>
-                </div>
-                
-        </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">  Anime List Editor</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ml-auto"><p class="lead"> Spending hours looking for your next anime to watch? Did you give up watching anime becasue you're overwhelmed with all of the titles and don't feel like sifting through reviews? If so, you have came to the right spot! </p></div>
-                    <div class="col-lg-4 mr-auto"><p class="lead">Welcome! to the Anime Suggestion Box. The Anime Suggestion Box is a web app that displays anime titles and information about the anime. All of the infomation has been uploaded by fellow anime fans. So if its on the lost, you can consider it worth a watch! Users of the app have the ability to add new anime to the list, delete from the list and edit specific information on previosuly uploaded anime. Enjoy the app and START WATCHING!</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light anime_list_editor_button" href="/editor">
-                        <i class="fas fa-edit mr-2"></i>
-                        Anime List Editor
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            Øster Alle 14
-                            <br />
-                            6000 Kolding
-
-                        </p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Anime Suggestion Box</h4>
-                        <p class="lead mb-0">
-                            Anime Suggestion Box is a free to use web app, created for educational purposes.    
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright © Your Website 2020</small></div>
+    <!-- Collabsable Nav -->
+    <ul class="sidenav" id="mobile-demo">
+      <li><a class="anchor nav_txt" href="#portfolio">Home</a></li>
+      <li><a class="anchor nav_txt" href="#about">Anime List Editor</a></li>
+      <li><a class="anchor nav_txt" href="/editor">Add Anime</a></li>
+      <li>
+        <a class="anchor nav_txt" href="/edit_anime_accordian">Edit Anime</a>
+      </li>
+    </ul>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+      <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">Start Watching</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
         </div>
-        <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-        <div class="scroll-to-top d-lg-none position-fixed">
-            <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
+      </div>
+    </header>
+    <!-- Anime Section-->
+    <section class="page-section portfolio" id="portfolio">
+      <div class="container">
+        <!-- AnimeSection Heading-->
+        <h2
+          class="page-section-heading text-center text-uppercase text-secondary mb-0"
+        >
+          Anime
+        </h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
         </div>
-    
-        <!-- Compiled and minified JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="{{ url_for('static', filename='assets/mail/jqBootstrapValidation.js') }}"></script>
-        <script src="{{ url_for('static', filename='assets/mail/contact_me.js') }}"></script>
-        <!-- Core theme JS-->
-        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    </body>
+        <!-- Anime Search Bar-->
+        <div class="row" id="accordian-container">
+          <form action="{{ url_for('search') }}" method="post" class="col s12">
+            <div class="row valign-wrapper center-align">
+              <div class="input-field col s12">
+                <i
+                  class="fas fa-search prefix light-blue-text text-darken-4"
+                ></i>
+                <input
+                  type="text"
+                  name="query"
+                  id="query"
+                  minlength="3"
+                  required
+                />
+                <label for="query">Search Name, Genre, or Studio</label>
+                <a
+                  href="{{ url_for('get_anime') }}"
+                  class="btn btn-lg btn-primary card_button reset_button"
+                  >Reset</a
+                >
+                <button
+                  type="submit"
+                  class="btn btn-lg btn-primary card_button"
+                >
+                  <i class="fas fa-search mr-2"></i> Search
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Anime Card Grid Items-->
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          {% for show in anime %}
+          <div class="col-sm-3">
+            <div class="card">
+              <img class="card-img-top" src="{{ show.anime_image }}" alt="" />
+              <div class="card-body">
+                <h2 class="card-title">{{show.anime_name}}</h2>
+                <p class="card-text">{{show.anime_description}}</p>
+                <ul>
+                  <li>
+                    <strong>Release Date:</strong> {{ show.anime_release_date }}
+                  </li>
+                  <li><strong>Country:</strong> {{ show.anime_country }}</li>
+                  <li>
+                    <strong>Production Studio:</strong> {{ show.anime_studio }}
+                  </li>
+                  <li><strong>Genre</strong>&nbsp;{{ show.anime_genre }}</li>
+                </ul>
+                <a href="{{ show.anime_url }}" target="_blank"
+                  ><button
+                    type="button"
+                    class="btn btn-lg btn-primary card_button"
+                  >
+                    Watch
+                  </button></a
+                >
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- About Section-->
+    <section class="page-section bg-primary text-white mb-0" id="about">
+      <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">
+          Anime List Editor
+        </h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+          <div class="col-lg-4 ml-auto">
+            <p class="lead">
+              Spending hours looking for your next anime to watch? Did you give
+              up watching anime becasue you're overwhelmed with all of the
+              titles and don't feel like sifting through reviews? If so, you
+              have came to the right spot!
+            </p>
+          </div>
+          <div class="col-lg-4 mr-auto">
+            <p class="lead">
+              Welcome! to the Anime Suggestion Box. The Anime Suggestion Box is
+              a web app that displays anime titles and information about the
+              anime. All of the infomation has been uploaded by fellow anime
+              fans. So if its on the lost, you can consider it worth a watch!
+              Users of the app have the ability to add new anime to the list,
+              delete from the list and edit specific information on previosuly
+              uploaded anime. Enjoy the app and START WATCHING!
+            </p>
+          </div>
+        </div>
+        <!-- About Section Button-->
+        <div class="text-center mt-4">
+          <a
+            class="btn btn-xl btn-outline-light anime_list_editor_button"
+            href="/editor"
+          >
+            <i class="fas fa-edit mr-2"></i>
+            Anime List Editor
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+      <div class="container">
+        <div class="row">
+          <!-- Footer Location-->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Location</h4>
+            <p class="lead mb-0">
+              Øster Alle 14
+              <br />
+              6000 Kolding
+            </p>
+          </div>
+          <!-- Footer Social Icons-->
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h4 class="text-uppercase mb-4">Around the Web</h4>
+            <a class="btn btn-outline-light btn-social mx-1" href="#!"
+              ><i class="fab fa-fw fa-facebook-f"></i
+            ></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="#!"
+              ><i class="fab fa-fw fa-twitter"></i
+            ></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="#!"
+              ><i class="fab fa-fw fa-linkedin-in"></i
+            ></a>
+            <a class="btn btn-outline-light btn-social mx-1" href="#!"
+              ><i class="fab fa-fw fa-dribbble"></i
+            ></a>
+          </div>
+          <!-- Footer About Text-->
+          <div class="col-lg-4">
+            <h4 class="text-uppercase mb-4">About Anime Suggestion Box</h4>
+            <p class="lead mb-0">
+              Anime Suggestion Box is a free to use web app, created for
+              educational purposes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+      <div class="container"><small>Copyright © Your Website 2020</small></div>
+    </div>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+    <div class="scroll-to-top d-lg-none position-fixed">
+      <a
+        class="js-scroll-trigger d-block text-center text-white rounded"
+        href="#page-top"
+        ><i class="fa fa-chevron-up"></i
+      ></a>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+    <script src="{{ url_for('static', filename='assets/mail/jqBootstrapValidation.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/mail/contact_me.js') }}"></script>
+    <!-- Core theme JS-->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
 </html>
 {% endblock %}
