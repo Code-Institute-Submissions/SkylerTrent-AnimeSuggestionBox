@@ -11,6 +11,7 @@ app.config["MONGO_DBNAME"] = 'myTestDB'
 
 mongo = PyMongo(app)
 
+
 @app.route('/')
 @app.route('/get_anime')
 def get_anime():
@@ -84,4 +85,4 @@ def add_anime():
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
