@@ -16,6 +16,11 @@
               <a href="#about" class="anchor nav_txt">Anime List Editor</a>
             </li>
             <li><a href="/editor" class="anchor nav_txt">Add Anime</a></li>
+            <li>
+              <a class="anchor nav_txt" href="/edit_anime_accordian"
+                >Edit Anime</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
@@ -95,7 +100,11 @@
           {% for show in anime %}
           <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
             <div class="card">
-              <img class="card-img-top" src="{{ show.anime_image }}" alt="Picture of Anime Title" />
+              <img
+                class="card-img-top"
+                src="{{ show.anime_image }}"
+                alt="Picture of Anime Title"
+              />
               <div class="card-body">
                 <h2 class="card-title">{{show.anime_name}}</h2>
                 <p class="card-text">{{show.anime_description}}</p>
