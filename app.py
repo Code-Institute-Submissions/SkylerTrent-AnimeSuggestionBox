@@ -74,9 +74,7 @@ def add_anime():
             "anime_release_date": request.form.get("anime_release_date"),
             "anime_image": request.form.get("anime_image"),
             "anime_url": request.form.get("anime_url"),
-            "anime_genre": request.form.get("anime_genre"),
-            "anime_country": request.form.get("anime_country"),
-            "anime_studio": request.form.get("anime_studio")
+            "anime_genre": request.form.get("anime_genre") 
         }
         mongo.db.myFirstMDB.insert_one(anime)
         return redirect(url_for("get_anime"))
